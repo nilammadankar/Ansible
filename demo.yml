@@ -3,4 +3,4 @@
   tasks:
   - name: print message1
     debug:
-    msg: "{This is first playbook}"
+      msg: "{This is first playbook}"
