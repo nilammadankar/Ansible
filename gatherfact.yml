@@ -1,0 +1,17 @@
+- name: playbook1
+  hosts: all
+  tasks:
+  #it shows error in output when running commands
+  #gather_facts: no
+  #belowed one for specific key & it's details
+    - name: print messages_1
+      debug:
+       msg: "ansible_user_gid:{{ansible_user_gid}}"
+
+  #belowed one for multiple key and it's details
+    - name: print messages_2
+      debug:
+       msg: "multiple keys and it's details:{{ansible_env.LOGNAME}}"
+
+
+      #note:- o/p= it shows content and its sub-content (key & it's values)

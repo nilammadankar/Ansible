@@ -1,0 +1,31 @@
+- name: webserver-playbook
+  hosts: all
+  become: true
+  tasks:
+
+  - name: installing web-sever                    #installing web-sever
+    apt:
+     name: httpd
+     state: latest
+
+  - blockinfile:                                  #Adding content into html page
+     path: /var/www/html/index.html
+     create: yes
+     block: |
+      <H1>
+        Hello nilam
+      </H1>
+  - name: httpd                             #starting httpd service
+    systemd:
+     name: apache2
+     state: started
+
+
+     #NOTE:-We have to add 80 port in security groups because httpd service 
+
+  # - name: restart_httpd
+  #   systemd:
+  #    name: httpd
+  #    state: restarted
+
+

@@ -1,0 +1,13 @@
+- name: playbook1
+  hosts: all
+
+
+  tasks:
+  - name: print message_1
+    debug:
+     msg: "{{URL}}"
+
+
+##print URL in hosts.yml file (where we put public ip of nodes IP: URL)
+
+

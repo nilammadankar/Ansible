@@ -1,0 +1,9 @@
+- name: blockingfile module 
+  hosts: all
+  become: true
+  tasks:
+    - blockinfile:
+        path: /mnt/block.txt
+        create: yes
+        block: |
+          hello nnnn
